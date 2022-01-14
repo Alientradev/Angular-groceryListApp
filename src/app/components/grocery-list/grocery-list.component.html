@@ -1,0 +1,35 @@
+<div class="container mt-5">
+    <div class="card glass">
+        <div class="card-body">
+            <span class="text-center">
+                <h2>Lista de Mercado</h2>
+            </span>
+            <div routerLink="/create-product" class="btn btn-dark float-end">Agregar</div>
+            <h3 *ngIf="product.length <= 0">No hay productos en la lista</h3>
+            <table *ngIf="product.length > 0" class="table table-dark table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Nombre del producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of product">
+                        <td>{{product.product}}</td>
+                        <td>{{product.amount}}</td>
+                        <td>{{product.price | currency}}</td>
+                        <td>{{product.total | currency}}</td>
+                        <td>
+                            <div class="flex-icons">
+                                <i [routerLink]="['/edit-product/', product.id]" class="fas fa-edit fa-lg"></i>
+                                <i (click)="deleteProduct(product.id)" class="fas fa-trash-alt fa-lg"></i>
+                            </div>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

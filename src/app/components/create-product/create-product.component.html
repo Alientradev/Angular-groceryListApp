@@ -1,0 +1,45 @@
+<div class="container mt-5 flex">
+    <div class="card col-lg-8 glass">
+        <div class="card-body">
+            <div class="row">
+                <span class="text-center">
+                    <h3>{{title}}</h3>
+                    <div *ngIf="loading" class="spinner-border text-light" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </span>
+                <form [formGroup]="createProduct" class="form mt-3" (ngSubmit)="addEditProduct()">
+                    <div class="row">
+                        <div class="col">
+                            <input formControlName="product" type="text" class="form-control" placeholder="Ingrese el nombre del producto">
+                            <span class="text-danger text-font" *ngIf="createProduct.get('product')?.hasError('required') && createProduct.get('product')?.touched">
+                                El producto es requerido!
+                            </span>
+                        </div>
+                        </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <input formControlName="amount" type="number" oninput="this.value = Math.abs(this.value)" class="form-control" placeholder="Ingrese la cantidad">
+                            <span class="text-danger text-font" *ngIf="createProduct.get('amount')?.hasError('required') && createProduct.get('amount')?.touched">
+                                La cantidad es requerida!
+                            </span>
+                        </div>
+                        <div class="col">
+                            <input formControlName="price" type="number" oninput="this.value = Math.abs(this.value)" class="form-control" placeholder="Ingrese el Valor unitario" >
+                            <span class="text-danger text-font" *ngIf="createProduct.get('price')?.hasError('required') && createProduct.get('price')?.touched">
+                                El precio es requerido!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="flex-btn mt-3">
+                            <button routerLink="/grocery-lists" type="text" class="btn btn-dark">Regresar</button>
+                            <button type="submit" class="btn btn-dark">Aceptar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+.flex-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+
+@media screen and (min-width: 1024px) {
+
+
+
+}
+
+@media screen and (max-width: 460px) {
+
+
+}

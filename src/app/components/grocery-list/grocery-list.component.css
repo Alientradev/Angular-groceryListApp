@@ -1,0 +1,13 @@
+.btn {
+    margin: 5px;
+}
+
+.flex-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fas {
+    cursor: pointer;
+}
